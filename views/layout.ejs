@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <%- style %>
+  </head>
+  <body>
+    <%- include('_header'); %>
+    <main id="layout-main">
+      <!-- this is main body/wall/timeline where you see all your posts, friends and other things     -->
+      <%- body %>
+    </main>
+
+    <%- include('_footer'); %> <%- script %>
+  </body>
+</html>

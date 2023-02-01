@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="/css/user_profile.css" />
+<h1>
+  FriendBook / Profile Page
+  <h2>hi <%= profile_user.name %></h2>
+</h1>
+<img src="<%= profile_user.avatar %>" alt="<% profile_user.name %>" height:
+"200" width:"200"> <% if(user.id == profile_user.id) { %>
+<form
+  action="/users/update/<%= profile_user.id %>"
+  enctype="multipart/form-data"
+  method="POST"
+>
+  <!-- enctype="multipart/form-data" tells the browser the form takes also files as input in place of plain text  -->
+  <!-- now to parse this input boxes we need multer not body parser -->
+  <input
+    type="text"
+    name="name"
+    placeholder="Your Name"
+    value="<%= profile_user.name %>"
+    required
+  />
+  <input
+    type="email"
+    name="email"
+    placeholder="Your Email"
+    value="<%= profile_user.email %>"
+    required
+  />
+  <input type="file" name="avatar" placeholder="Upload your avatar... " />
+  <input type="submit" value="Update" />
+</form>
+<% }else { %>
+<p><%= profile_user.name %></p>
+<p><%= profile_user.email %></p>
+<% } %>
